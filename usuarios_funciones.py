@@ -21,5 +21,23 @@ def eliminar_usuarios(datos):
         print("Participante no existe")
     return datos
 
-def modificar_clientes():
+def modificar_clientes(datos):
+    datos = dict(datos)
+
+    print("Estos son los clientes disponibles")
+
+    for i in range(len(datos["usuarios"])):
+        print(datos["usuarios"][i]["nombre"], end=": ")
+        print(datos["usuarios"][i]["documento"])
+
+
+    doc_soli =input("Ingrese el documento del cliente que quiere editar: ")
+    for i in range(len(datos["usuarios"])):
+        if datos["usuarios"][i]["documento"] == doc_soli:
+                datos["usuarios"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
+                datos["usuarios"][i]["documento"]=input("Ingrese el nuevo documento: ")
+                print("Usuario modificado con exito!")
+                return datos
+        print("El usuario no existe :(")
+    return datos
      

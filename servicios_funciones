@@ -1,0 +1,42 @@
+def crear_servicio(datos):
+    datos = dict(datos)
+    usuario={}
+    usuario["nombre"]=input("Ingrese el nuevo servicio: ")
+    usuario["id"]=input("Ingrese el nuevo id: ")
+
+    datos["servicios"].append(usuario)
+
+    print("servicio agregado con éxito!")
+    return datos
+
+def eliminar_servicios(datos):
+    datos = dict(datos)
+
+    doc_ingresado =input("Ingrese el id del servicio: ")
+    for i in range(len(datos["servicios"])):
+        if datos["servicios"][i]["id"] == doc_ingresado:
+                datos["servicios"].pop(i)
+                print("Servicio eliminado!")
+                return datos
+        print("No se encontro el servicio !!")
+    return datos
+
+def modificar_servicios(datos):
+    datos = dict(datos)
+
+    print("Estos son los actuales servicios")
+
+    for i in range(len(datos["servicios"])):
+        print(datos["servicios"][i]["id"], end=": ")
+        print(datos["servicios"][i]["nombre"])
+
+
+    id_soli =input("Ingrese el id del servicio que quiere editar: ")
+    for i in range(len(datos["servicios"])):
+        if datos["servicios"][i]["id"] == id_soli:
+                datos["usuarios"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
+                datos["usuarios"][i]["id"]=input("Ingrese el nuevo id: ")
+                print("Servicio modificado con exito!")
+                return datos
+        print("No se encontro el servicio :(")
+    return datos

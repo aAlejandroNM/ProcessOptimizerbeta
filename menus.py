@@ -1,4 +1,5 @@
-from usuarios_funciones import*
+from usuarios_funciones import *
+from servicios_funciones import * 
 from datos import *
 
 USUARIOS_DB = "usuarios.json"
@@ -28,9 +29,9 @@ def menu_usuarios():
         if opc == 1:
             crear_usuarios(datos_usuarios)
         elif opc == 2:
-            print("pendiente")
+            modificar_clientes(datos_usuarios)
         elif opc == 3:
-             eliminar_usuarios(datos_usuarios)
+            eliminar_usuarios(datos_usuarios)
         elif opc == 4:
             break
         guardar_datos(datos_usuarios,USUARIOS_DB)
