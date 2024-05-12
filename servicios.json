@@ -1,0 +1,16 @@
+{
+    "servicios": [
+        {
+            "id": 1,
+            "nombre": "prepago",
+            "caracteristicas": "sddfsdf",
+            "precio": 234
+        },
+        {
+            "id": 2,
+            "nombre": "postpago",
+            "caracteristicas": "fjsdfsd",
+            "precio": 45
+        }
+    ]
+}

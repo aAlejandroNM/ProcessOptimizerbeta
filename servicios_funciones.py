@@ -1,10 +1,14 @@
+
 def crear_servicio(datos):
     datos = dict(datos)
-    usuario={}
-    usuario["nombre"]=input("Ingrese el nuevo servicio: ")
-    usuario["id"]=input("Ingrese el nuevo id: ")
+    servicio={}
+    servicio["id"]=generador_id(datos)
+    servicio["nombre"]=input("Ingrese el nuevo servicio: ")
+    #servicio["id"]=input("Ingrese el nuevo id: ")
+    servicio["caracteristicas"]=input("Ingrese las caracteristicas del servicio")
+    servicio["precio"]=int(input("Cuento Cuesta el servicio"))
 
-    datos["servicios"].append(usuario)
+    datos["servicios"].append(servicio)
 
     print("servicio agregado con éxito!")
     return datos
@@ -12,11 +16,18 @@ def crear_servicio(datos):
 def eliminar_servicios(datos):
     datos = dict(datos)
 
-    doc_ingresado =input("Ingrese el id del servicio: ")
+    print("Estos son los Servicios disponibles")
+
+    for i in range(len(datos["servicios"])):
+        print(datos["servicios"][i]["id"], end=": ")
+        print(datos["servicios"][i]["nombre"])
+
+    doc_ingresado =int(input("Ingrese el id del servicio: "))
     for i in range(len(datos["servicios"])):
         if datos["servicios"][i]["id"] == doc_ingresado:
                 datos["servicios"].pop(i)
                 print("Servicio eliminado!")
+                actualizador_id(datos)
                 return datos
         print("No se encontro el servicio !!")
     return datos
@@ -40,3 +51,14 @@ def modificar_servicios(datos):
                 return datos
         print("No se encontro el servicio :(")
     return datos
+
+def generador_id(datos):
+    return len(datos["servicios"]) + 1
+
+def actualizador_id(datos):
+    for i in range(len(datos["servicios"])):
+        datos["servicios"][i]["id"] = i + 1
+    return datos
+
+
+        
