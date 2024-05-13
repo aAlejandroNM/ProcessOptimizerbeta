@@ -1,7 +1,10 @@
 {
-    "productos":[
+    "productos": [
         {
-            
+            "id": 1,
+            "nombre": "iphone 15",
+            "caracteristicas": "es lindo",
+            "precio": 2200000
         }
     ]
 }

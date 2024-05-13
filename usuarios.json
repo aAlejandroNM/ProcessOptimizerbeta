@@ -1,48 +1,57 @@
 {
     "usuarios": [
         {
-            "nombre": "Juan",
-            "documento": "123456789",
-            "telefono": "3222278",
-            "direccion": "cr34 n4",
-            "consultas": "",
-            "reclamaciones": "",
-            "sugerencias": "",
-            "cantidad_compras": 1
-        },
-        {
             "nombre": "Alejandro",
             "documento": "1050602473",
-            "telefono": "32227846",
-            "direccion": "cr23 no734",
-            "consultas": "",
-            "reclamaciones": "",
-            "sugerencias": "",
-            "cantidad_compras": 1
-        },
-        {
-            "nombre": "prueba",
-            "documento": "prueba",
-            "telefono": "prueba",
-            "direccion": "prueba",
-            "consultas": "dlsfjsdfsd",
-            "reclamaciones": "la aplicacion que usan es una basura",
-            "sugerencias": "agregar interfaz grafica",
-            "cantidad_compras": 1
-        },
-        {
-            "nombre": "mateo",
-            "documento": "98766",
-            "telefono": "678345",
-            "direccion": "cr12389",
+            "telefono": "3235478",
+            "direccion": "cr 3249",
+            "estudiante": true,
+            "videojuegos": true,
+            "cantidad_gente": 4,
             "consultas": "",
             "reclamaciones": "",
             "sugerencias": "",
             "cantidad_compras": 1,
             "sus_servicios": [
-                "perro",
-                "gato",
-                "jaun"
+                "prepago",
+                "prepago"
+            ],
+            "productos": [
+                "iphone 15",
+                "iphone 15"
+            ]
+        },
+        {
+            "nombre": "meteo",
+            "documento": "2343",
+            "tipo_cliente": "leal",
+            "telefono": "543",
+            "direccion": "vdsra4",
+            "estudiante": true,
+            "videojuegos": false,
+            "cantidad_gente": 3,
+            "consultas": "",
+            "reclamaciones": "",
+            "sugerencias": "",
+            "cantidad_compras": 5,
+            "sus_servicios": [],
+            "productos": [
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15",
+                "iphone 15"
             ]
         }
     ]

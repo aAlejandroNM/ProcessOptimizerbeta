@@ -11,6 +11,9 @@ datos_servicios = traer_datos(SERVICIOS_DB)
 PRODUCTOS_DB = "productos.json"
 datos_productos = traer_datos(PRODUCTOS_DB)
 
+VENTAS_DB = "ventas.json"
+datos_ventas = traer_datos(VENTAS_DB)
+
 while True:
     menu_principal()
     opc = pedir_opcion()

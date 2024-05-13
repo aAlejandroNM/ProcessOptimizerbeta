@@ -40,20 +40,21 @@ def modificar_producto(datos):
         print(datos["productos"][i]["nombre"])
 
 
-    id_soli =input("Ingrese el id del producto que quiere modificar: ")
+    id_soli =int(input("Ingrese el id del producto que quiere modificar: "))
     for i in range(len(datos["productos"])):
         if datos["productos"][i]["id"] == id_soli:
-                datos["producto"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
-                datos["productos"][i]["id"]=input("Ingrese el nuevo id: ")
-                print("productos modificado con exito!")
+                datos["productos"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
+                producto["caracteristicas"]=input("Ingrese las caracteristicas del producto")
+                producto["precio"]=int(input("Cuento Cuesta el producto"))
+                print("producto modificado con exito!")
                 return datos
         print("No se encontro el producto :(")
     return datos
 
 def generador_id(datos):
-    return len(datos["producto"]) + 1
+    return len(datos["productos"]) + 1
 
 def actualizador_id(datos):
-    for i in range(len(datos["producto"])):
-        datos["producto"][i]["id"] = i + 1
+    for i in range(len(datos["productos"])):
+        datos["productos"][i]["id"] = i + 1
     return datos

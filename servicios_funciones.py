@@ -4,7 +4,6 @@ def crear_servicio(datos):
     servicio={}
     servicio["id"]=generador_id(datos)
     servicio["nombre"]=input("Ingrese el nuevo servicio: ")
-    #servicio["id"]=input("Ingrese el nuevo id: ")
     servicio["caracteristicas"]=input("Ingrese las caracteristicas del servicio")
     servicio["precio"]=int(input("Cuento Cuesta el servicio"))
 
@@ -46,7 +45,8 @@ def modificar_servicios(datos):
     for i in range(len(datos["servicios"])):
         if datos["servicios"][i]["id"] == id_soli:
                 datos["usuarios"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
-                datos["usuarios"][i]["id"]=input("Ingrese el nuevo id: ")
+                servicio["caracteristicas"]=input("Ingrese las caracteristicas del servicio")
+                servicio["precio"]=int(input("Cuento Cuesta el servicio"))
                 print("Servicio modificado con exito!")
                 return datos
         print("No se encontro el servicio :(")

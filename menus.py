@@ -2,6 +2,7 @@ from usuarios_funciones import *
 from servicios_funciones import * 
 from datos import *
 from productos_funciones import *
+from ventas_funciones import *
 
 USUARIOS_DB = "usuarios.json"
 datos_usuarios = traer_datos(USUARIOS_DB)
@@ -12,15 +13,19 @@ datos_servicios = traer_datos(SERVICIOS_DB)
 PRODUCTOS_DB = "productos.json"
 datos_productos = traer_datos(PRODUCTOS_DB)
 
+VENTAS_DB = "ventas.json"
+datos_ventas = traer_datos(VENTAS_DB)
+
 def menu_principal():
     print("***************************************")
     print("Menu Principal")
     print("(1) Usuarios")
     print("(2) Gestion Servicios")
     print("(3) Ventas")
-    print("(4) Reportes")
-    print("(5) Servicio al Cliente")
-    print('(6) Salir')
+    print("(4) Productos")
+    print("(5) Reportes ")
+    print("(6) Servicio al Cliente")
+    print('(7) Salir')
     print("***************************************")   
 
 def menu_usuarios():
@@ -50,8 +55,7 @@ def menu_gestion_servicios():
         print("(1) Crear Servicios")
         print("(2) Modificar Servicios")
         print("(3) Eliminar Servicios")
-        print("(4) Caracteristicas Servicios")
-        print("(5) Atras")
+        print("(4) Atras")
         print("***************************************")
         opc = pedir_opcion()
         if opc == 1:
@@ -61,8 +65,6 @@ def menu_gestion_servicios():
         elif opc == 3:
             eliminar_servicios(datos_servicios)
         elif opc == 4:
-            eliminar_servicios(datos_servicios)
-        elif opc == 5:
             break
         guardar_datos(datos_servicios,SERVICIOS_DB)
 
@@ -73,8 +75,7 @@ def menu_productos():
         print("(1) Crear Producto")
         print("(2) Modificar Producto")
         print("(3) Eliminar Producto")
-        print("(4) Caracteristicas Productos")
-        print("(5) Atras")
+        print("(4) Atras")
         print("***************************************")
         opc = pedir_opcion()
         if opc == 1:
@@ -84,29 +85,34 @@ def menu_productos():
         elif opc == 3:
             eliminar_producto(datos_productos)
         elif opc == 4:
-            eliminar_producto(datos_productos)
-        elif opc == 5:
             break
         guardar_datos(datos_productos,PRODUCTOS_DB)
 
 def menu_Ventas():
-    print("***************************************")
-    print("Menu Ventas")
-    print("(1) Crear Venta")
-    print("(2) Mostrar Venta")
-    print("(3) productos segun sus caracteristicaspendiente")
-    print("(4) Atras")
-    print("***************************************")
+    
     while True:
+        print("***************************************")
+        print("Menu Ventas")
+        print("(1) Crear Venta")
+        print("(2) Mostrar Ventas")
+        print("(3) Caracteristicas Servicios/Productos")
+        print("(4) Atras")
+        print("***************************************")
         opc = pedir_opcion()
         if opc == 1:
-            print("pendiente")
+            crear_venta(datos_ventas, datos_usuarios,datos_servicios, datos_productos)
+            documento =input("ingrese el documento de nuevo para confirmar la venta: ")
+            actualizador_tipo_cliente(datos_usuarios,documento)
         elif opc == 2:
-            print("pendiente")
+            mostrar_ventas(datos_ventas)
         elif opc == 3:
-            print("pendiente")             
+            caracteristicas_pro_ser(datos_servicios, datos_productos)           
         elif opc == 4:
             break
+        guardar_datos(datos_usuarios,USUARIOS_DB)
+        guardar_datos(datos_ventas,VENTAS_DB)
+
+
 
 def menu_Reportes():
     print("***************************************")

@@ -3,6 +3,7 @@ def crear_usuarios(datos):
     usuario={}
     usuario["nombre"]=input("Ingrese el nombre: ")
     usuario["documento"]=input("Ingrese el documento: ")
+    usuario["tipo_cliente"]="Nuevo"
     usuario["telefono"]=input("Ingrese su numero telefonico: ")
     usuario["direccion"]=input("Ingrese su direccion de residencia: ")
     print("Ingrese 1 si el cliente es estudiante o 2 de lo contrario")
@@ -29,7 +30,7 @@ def crear_usuarios(datos):
     usuario["consultas"]=input()
     usuario["reclamaciones"]=""
     usuario["sugerencias"]=""
-    usuario["cantidad_compras"]=1
+    usuario["cantidad_compras"]=0
     usuario["sus_servicios"]=[]
     usuario["productos"]=[]
 

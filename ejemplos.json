@@ -1,0 +1,98 @@
+{
+    "productos":[
+        {
+            "id": 1,
+            "nombre": "iphone 15",
+            "caracteristicas":"",
+            "precio": 1150000
+        },
+        {
+            "id": 2,
+            "nombre": "iphone 16",
+            "caracteristicas":"",
+            "precio": 4150000
+        },
+        {
+            "id": 3,
+            "nombre": "Airpods",
+            "caracteristicas":"",
+            "precio": 2150000
+        }
+    ],
+    "servicios":[
+        {
+            "id": 1,
+            "nombre": "internet fibra optica 300 MB",
+            "caracteristicas": "Internet dirijido para usuarios que jueguen videojuegos competitivamente",
+            "precio": 200000
+        },
+        {
+            "id": 2,
+            "nombre": "internet fibra optica 80 MB",
+            "caracteristicas": "Internet dirijido para usuarios que vivan con hasta 10 personas",
+            "precio": 150000
+        },
+        {
+            "id": 3,
+            "nombre": "internet fibra optica 20 MB",
+            "caracteristicas": "Internet dirijido para usuarios con bajo presupuesto y vivan con menos de 4 personas",
+            "precio": 60000
+        },
+        {
+            "id": 4,
+            "nombre": "Plan Postpago",
+            "caracteristicas": "no c",
+            "precio": 30000
+        }
+    ],
+    "usuarios":[
+        {
+            "nombre": "Alejandro Gomez",
+            "documento": "123456789",
+            "telefono": "324576899",
+            "direccion": "cr 234 no 43",
+            "estudiante": true,
+            "videojuegos": true,
+            "cantidad_gente": 4,
+            "sus_servicios": [
+                "internet fibra optica 300 MB",
+                "internet fibra optica 20 MB"
+            ],
+            "productos":[
+                "iphone 16",
+                "Airpods"
+            ]
+        },
+        {
+            "nombre": "Pedro Gomez",
+            "documento": "987654321",
+            "telefono": "324576899",
+            "direccion": "cr 234 no 43",
+            "estudiante": false,
+            "videojuegos": false,
+            "cantidad_gente": 2,
+            "sus_servicios": [
+                "internet fibra optica 20 MB",
+                "plan postpago"
+            ],
+            "productos":[
+                "iphone 15",
+                "Airpods"
+            ]
+        }
+    ],
+    "ventas":[
+        {
+            "id": 1,
+            "cliente": "Juan",
+            "documento": "123456789",
+            "fecha": "2024-05-12 18:28"
+        },
+        {
+            "id": 2,
+            "cliente": "Alejandro",
+            "documento": "1050602473",
+            "fecha": "2024-05-12 18:28"
+        }
+    ]
+}
