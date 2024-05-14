@@ -10,7 +10,8 @@ def crear_servicio(datos):
         try:
             servicio["precio"] = float(input("¿Cuánto cuesta el servicio? "))
             break
-        except ValueError:
+        except ValueError as e:
+            manejar_excepciones(e)
             print("Error: Por favor, ingrese un número válido para el precio del servicio.")
 
     datos["servicios"].append(servicio)
@@ -41,21 +42,27 @@ def modificar_servicios(datos):
     datos = dict(datos)
 
     print("Estos son los actuales servicios")
-
+    #mostrar servicios
     for i in range(len(datos["servicios"])):
         print(datos["servicios"][i]["id"], end=": ")
         print(datos["servicios"][i]["nombre"])
-
 
     id_soli =int(input("Ingrese el id del servicio que quiere editar: "))
     for i in range(len(datos["servicios"])):
         if datos["servicios"][i]["id"] == id_soli:
                 datos["servicios"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
                 datos["servicios"][i]["caracteristicas"]=input("Ingrese las caracteristicas del servicio")
-                datos["servicios"][i]["precio"]=int(input("Cuento Cuesta el servicio"))
-                print("servicios modificado con exito!")
-                return datos
-    print("No se encontro el servicio :(")
+                while True:
+                    try:
+                        datos["servicios"][i]["precio"] = int(input("¿Cuánto cuesta el servicio? "))
+                        break
+                    except ValueError as e:
+                        manejar_excepciones(e)
+                        print("Error: Por favor, ingrese un numero válido para el precio del servicio.")
+
+                print("Servicio modificado con éxito!")
+                return datos         
+    print("No se encontró el servicio :(")
     return datos
 
 

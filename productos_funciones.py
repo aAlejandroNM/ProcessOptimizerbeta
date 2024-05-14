@@ -6,12 +6,12 @@ def crear_producto(datos):
     producto["nombre"] = input("Ingrese el nuevo producto: ")
     producto["caracteristicas"] = input("Ingrese las características del producto: ")
     
-    # Manejo de excepciones para asegurar que el precio sea un número válido
     while True:
         try:
-            producto["precio"] = float(input("¿Cuánto cuesta el producto? "))
+            producto["precio"] = int(input("¿Cuánto cuesta el producto? "))
             break
-        except ValueError:
+        except ValueError as e:
+            manejar_excepciones(e)
             print("Error: Por favor, ingrese un número válido para el precio del producto.")
 
     datos["productos"].append(producto)
@@ -51,13 +51,13 @@ def modificar_producto(datos):
         if datos["productos"][i]["id"] == id_soli:
             datos["productos"][i]["nombre"] = input("Ingrese el nuevo nombre: ")
             datos["productos"][i]["caracteristicas"] = input("Ingrese las características del producto: ")
-            
-            # Manejo de excepciones para asegurar que el precio sea un número válido
+
             while True:
                 try:
-                    datos["productos"][i]["precio"] = float(input("¿Cuánto cuesta el producto? "))
+                    datos["productos"][i]["precio"] = int(input("¿Cuánto cuesta el producto? "))
                     break
-                except ValueError:
+                except ValueError as e:
+                    manejar_excepciones(e)
                     print("Error: Por favor, ingrese un número válido para el precio del producto.")
                     
             print("Producto modificado con éxito!")

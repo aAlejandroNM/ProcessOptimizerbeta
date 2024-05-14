@@ -20,9 +20,9 @@
         },
         {
             "id": 4,
-            "nombre": "Plan Postpago",
-            "caracteristicas": "no c",
-            "precio": 30000
+            "nombre": "Plan postpago",
+            "caracteristicas": "economcio",
+            "precio": 10000
         }
     ]
 }

@@ -25,8 +25,9 @@ def crear_usuarios(datos):
         if opcion_estudiante not in [1, 2]:
             raise ValueError("Ingrese 1 o 2.")
         usuario["estudiante"] = opcion_estudiante == 1
-    except ValueError as ve:
-        print(f"Error: {ve}. Se asumirá que el cliente no es estudiante.")
+    except ValueError as e:
+        manejar_excepciones(e)
+        print(f"Error:  Se asumirá que el cliente no es estudiante.")
         usuario["estudiante"] = False
 
     try:
@@ -34,14 +35,16 @@ def crear_usuarios(datos):
         if opcion_videojuegos not in [1, 2]:
             raise ValueError("Ingrese 1 o 2.")
         usuario["videojuegos"] = opcion_videojuegos == 1
-    except ValueError as ve:
-        print(f"Error: {ve}. Se asumirá que el cliente no juega videojuegos de forma competitiva.")
+    except ValueError as e:
+        manejar_excepciones(e)
+        print(f"Error: Se asume que el cliente no juega videojuegos de forma competitiva.")
         usuario["videojuegos"] = False
 
     try:
         usuario["cantidad_gente"] = int(input("¿Con cuánta gente vive el cliente? "))
-    except ValueError as ve:
-        print(f"Error: {ve}. Se asumirá que el cliente vive solo.")
+    except ValueError as e:
+        manejar_excepciones(e)
+        print(f"Error: Se asumirá que el cliente vive solo.")
         usuario["cantidad_gente"] = 1
 
     usuario["consultas"] = input()
@@ -89,8 +92,9 @@ def modificar_clientes(datos):
                 if opc_estudiante not in [1, 2]:
                     raise ValueError("Ingrese 1 o 2.")
                 datos["usuarios"][i]["estudiante"] = opc_estudiante == 1
-            except ValueError as ve:
-                print(f"Error: {ve}. Se asumirá que el cliente no es estudiante.")
+            except ValueError as e:
+                manejar_excepciones(e)
+                print(f"Error: Se asumirá que el cliente no es estudiante.")
                 datos["usuarios"][i]["estudiante"] = False
             
             try:
@@ -98,15 +102,17 @@ def modificar_clientes(datos):
                 if opc_videojuegos not in [1, 2]:
                     raise ValueError("Ingrese 1 o 2.")
                 datos["usuarios"][i]["videojuegos"] = opc_videojuegos == 1
-            except ValueError as ve:
-                print(f"Error: {ve}. Se asumirá que el cliente no juega videojuegos de forma competitiva.")
+            except ValueError as e:
+                manejar_excepciones(e)
+                print(f"Error: Se asumirá que el cliente no juega videojuegos de forma competitiva.")
                 datos["usuarios"][i]["videojuegos"] = False
             
             try:
                 cantidad_personas = int(input("Ingrese con cuántas personas vive el cliente: "))
                 datos["usuarios"][i]["cantidad_gente"] = cantidad_personas
-            except ValueError as ve:
-                print(f"Error: {ve}. Se asumirá que el cliente vive solo.")
+            except ValueError as e:
+                manejar_excepciones(e)
+                print(f"Error: Se asumirá que el cliente vive solo.")
                 datos["usuarios"][i]["cantidad_gente"] = 1
 
             print("Cliente modificado con éxito!")
