@@ -14,181 +14,30 @@
         },
         {
             "id": 3,
-            "cliente": "mateo",
-            "documento": "98766",
-            "fecha": "2024-05-12 21:07"
+            "cliente": "meteo",
+            "producto": "iphone 15",
+            "servicio": "",
+            "valor_total": 920000.0,
+            "documento": "2343",
+            "fecha": "2024-05-13 19:18"
         },
         {
             "id": 4,
-            "cliente": "Alejadro",
-            "documento": "1050602473",
-            "fecha": "2024-05-12 21:18"
+            "cliente": "meteo",
+            "producto": "iphone 15",
+            "servicio": "Plan Postpago",
+            "valor_total": 920000.0,
+            "documento": "2343",
+            "fecha": "2024-05-13 19:21"
         },
         {
             "id": 5,
-            "cliente": "Alejandro",
-            "documento": "1050602473",
-            "fecha": "2024-05-12 21:19"
-        },
-        {
-            "id": 6,
-            "cliente": "Alejandro",
-            "documento": "1050602473",
-            "fecha": "2024-05-12 21:34"
-        },
-        {
-            "id": 7,
-            "cliente": "Alejandro",
-            "documento": "1050602473",
-            "fecha": "2024-05-12 21:40"
-        },
-        {
-            "id": 8,
-            "cliente": "Alejandro",
-            "documento": "1050602473",
-            "fecha": "2024-05-12 22:31"
-        },
-        {
-            "id": 9,
-            "cliente": "Alejandro",
-            "documento": "1050602473",
-            "fecha": "2024-05-12 22:57"
-        },
-        {
-            "id": 10,
-            "cliente": "Alejandro",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "1050602473",
-            "fecha": "2024-05-12 23:00"
-        },
-        {
-            "id": 11,
-            "cliente": "mateo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-12 23:35"
-        },
-        {
-            "id": 12,
             "cliente": "meteo",
             "producto": "iphone 15",
-            "servicio": "",
+            "servicio": "Plan Postpago",
+            "valor_total": 782000.0,
             "documento": "2343",
-            "fecha": "2024-05-12 23:58"
-        },
-        {
-            "id": 13,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:02"
-        },
-        {
-            "id": 14,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:17"
-        },
-        {
-            "id": 15,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:24"
-        },
-        {
-            "id": 16,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:26"
-        },
-        {
-            "id": 17,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:28"
-        },
-        {
-            "id": 18,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:31"
-        },
-        {
-            "id": 19,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:33"
-        },
-        {
-            "id": 20,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:39"
-        },
-        {
-            "id": 21,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:44"
-        },
-        {
-            "id": 22,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:47"
-        },
-        {
-            "id": 23,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:48"
-        },
-        {
-            "id": 24,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:51"
-        },
-        {
-            "id": 25,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:52"
-        },
-        {
-            "id": 26,
-            "cliente": "meteo",
-            "producto": "iphone 15",
-            "servicio": "",
-            "documento": "2343",
-            "fecha": "2024-05-13 00:54"
+            "fecha": "2024-05-13 19:45"
         }
     ]
 }

@@ -43,6 +43,12 @@
             "nombre": "Plan Postpago",
             "caracteristicas": "no c",
             "precio": 30000
+        },
+        {
+            "id": 5,
+            "nombre": "Plan prepago",
+            "caracteristicas": "no c",
+            "precio": 30000
         }
     ],
     "usuarios":[

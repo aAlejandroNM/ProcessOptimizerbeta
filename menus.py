@@ -3,6 +3,7 @@ from servicios_funciones import *
 from datos import *
 from productos_funciones import *
 from ventas_funciones import *
+from reportes import *
 
 USUARIOS_DB = "usuarios.json"
 datos_usuarios = traer_datos(USUARIOS_DB)
@@ -106,30 +107,29 @@ def menu_Ventas():
         elif opc == 2:
             mostrar_ventas(datos_ventas)
         elif opc == 3:
-            caracteristicas_pro_ser(datos_servicios, datos_productos)           
+            caracteristicas_pro_ser(datos_productos, datos_servicios)      
         elif opc == 4:
             break
         guardar_datos(datos_usuarios,USUARIOS_DB)
         guardar_datos(datos_ventas,VENTAS_DB)
 
-
-
 def menu_Reportes():
-    print("***************************************")
-    print("Menu Reportes")
-    print("(1) Generar Reporte Cantidad Productos")
-    print("(2) Generar Reporte Servicios Màs Populares")
-    print("(3) mostrar lo que cada usuario ha comprado y su cantidad")
-    print("(4) Atras")
-    print("***************************************")
-    while True:        
-        opc = pedir_opcion(datos_usuarios)
+   
+    while True:
+        print("***************************************")
+        print("Menu Reportes")
+        print("(1) Generar Reporte Cantidad Productos")
+        print("(2) Generar Reporte Servicios Màs Populares")
+        print("(3) mostrar lo que cada usuario ha comprado y su cantidad")
+        print("(4) Atras")
+        print("***************************************")      
+        opc = pedir_opcion()
         if opc == 1:
-            print("pendiente")
+            cantidad_pr_servicios(datos_productos,datos_servicios)
         elif opc == 2:
-            print("pendiente") 
+            mas_populares(datos_ventas) 
         elif opc == 3:
-            print("pendiente")  
+            syp_usuarios(datos_usuarios) 
         elif opc == 4:
             break
 
@@ -152,8 +152,6 @@ def menu_servicio_cliente():
         elif opc == 4:
             break
         guardar_datos(datos_usuarios,USUARIOS_DB)
-
-
 
 def pedir_opcion():
     opc = 0

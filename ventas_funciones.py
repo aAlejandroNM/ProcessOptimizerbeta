@@ -11,7 +11,7 @@ def crear_venta(datos, datos_usuarios,datos_servicios,datos_productos):
         print(datos_usuarios["usuarios"][i]["nombre"])
 
     venta["id"]=generador_id(datos)
-    venta["cliente"]=input("Ingrese el nombre del cliente: ")
+    cliente=input("Ingrese el nombre del cliente: ")
     documento=input("Ingrese el documento del cliente: ")
 
     print("Que quiere vender ?")
@@ -20,19 +20,34 @@ def crear_venta(datos, datos_usuarios,datos_servicios,datos_productos):
     opc = int(input("numero "))
     servicio=""
     producto=""
+    valor_total = 0
     if opc == 1:
         
         print("Estos son los Servicios disponibles")
         for i in range(len(datos_servicios["servicios"])):
             print(datos_servicios["servicios"][i]["id"], end=": ")
             print(datos_servicios["servicios"][i]["nombre"])
+            
+        print(f'Para el cliente {cliente} le recomendamos los siguientes servicios: ')
+
+        for i in range(len(datos_usuarios["usuarios"])):
+            if datos_usuarios["usuarios"][i]["nombre"]==cliente:
+                if datos_usuarios["usuarios"][i]["videojuegos"]== True:
+                    print('ID',datos_servicios["servicios"][0]["id"], end=": ")
+                    print(datos_servicios["servicios"][0]["nombre"])
+                elif datos_usuarios["usuarios"][i]["cantidad_gente"]>4:
+                    print('ID',datos_servicios["servicios"][1]["id"], end=": ")
+                    print(datos_servicios["servicios"][1]["nombre"])
 
         id_solici = int(input("ingrese el id del servicio que desea vender"))
         
+        #busca el id del servicio y se asigna a valor_total para luego agregar al diccionario
         for i in range(len(datos_servicios["servicios"])):
             if datos_servicios["servicios"][i]["id"] == id_solici:
                 servicio = datos_servicios["servicios"][i]["nombre"]
+                valor_total =datos_servicios["servicios"][i]["precio"]
         
+        #cambia el valor de cantidad de comprar de los usuarios y agrega el servicio escogido a la lista sus_servicios de usuarios
         for i in range(len(datos_usuarios["usuarios"])):
             if datos_usuarios["usuarios"][i]["documento"] == documento:
                 datos_usuarios["usuarios"][i]["sus_servicios"].append(servicio)
@@ -43,19 +58,50 @@ def crear_venta(datos, datos_usuarios,datos_servicios,datos_productos):
         for i in range(len(datos_productos["productos"])):
             print(datos_productos["productos"][i]["id"], end=": ")
             print(datos_productos["productos"][i]["nombre"])
+        
+        
+        #Mostrar la oferta de estudiantes 
+        for i in range(len(datos_usuarios["usuarios"])):
+            if datos_usuarios["usuarios"][i]["nombre"]==cliente:
+                if datos_usuarios["usuarios"][i]["estudiante"]== True:
+                    print(f'Para el cliente {cliente} le recomendamos los siguientes Productos ya que es estudiante: ')
+                    print('ID',datos_productos["productos"][0]["id"], end=": ")
+                    print(datos_productos["productos"][0]["nombre"])
+                    print('Precio actual: ',datos_productos["productos"][0]["precio"])
+                    precio = datos_productos["productos"][0]["precio"]
+                    print("Los estudiantes tienen descuento de 15% en el siguiente producto")
+                    print("Precio con descuento del 15%:", precio - (precio * 0.15))
+                     
+                    
 
         id_solici = int(input("ingrese el id del producto que desea vender"))
         for i in range(len(datos_productos["productos"])):
             if datos_productos["productos"][i]["id"] == id_solici:
                 producto = datos_productos["productos"][i]["nombre"]
+                valor_total=datos_productos["productos"][i]["precio"]
+
         
         for i in range(len(datos_usuarios["usuarios"])):
             if datos_usuarios["usuarios"][i]["documento"] == documento:
                 datos_usuarios["usuarios"][i]["productos"].append(producto)
                 datos_usuarios["usuarios"][i]["cantidad_compras"] +=1
 
+    venta["cliente"]=cliente
     venta["producto"]=producto
     venta["servicio"]=servicio
+    #ciclo para restarle el 20% de descuento si son clientes leales
+    for i in range(len(datos_usuarios["usuarios"])):
+            if datos_usuarios["usuarios"][i]["nombre"] == cliente:
+                if datos_usuarios['usuarios'][i]["tipo_cliente"]=="leal":
+                    print("como es cliente leal se le hara un descuento del 20%")
+                    valor_total = valor_total - (valor_total * 0.2)
+    #calcular descuento de estudiante
+    for i in range(len(datos_usuarios["usuarios"])):
+        if datos_usuarios["usuarios"][i]["documento"]== documento:
+            if datos_usuarios["usuarios"][i]["estudiante"]==True and id_solici == 1:
+                valor_total = valor_total -(valor_total*0.15)
+    
+    venta["valor_total"]=valor_total
     venta["documento"]=documento
     venta["fecha"]=datetime.now().strftime("%Y-%m-%d %H:%M")
     datos["ventas"].append(venta)
@@ -63,24 +109,7 @@ def crear_venta(datos, datos_usuarios,datos_servicios,datos_productos):
 
     print("venta realizada con éxito!")
     
-    return datos, datos_usuarios 
-
-# def actualizador_tipo_cliente(datos_usuarios,documento):
-#     for i in range(len(datos_usuarios)):
-#         print(datos_usuarios["usuarios"][i]["documento"])
-#         print(documento)
-#         print(i)
-#         print(len(datos_usuarios))
-
-#         if datos_usuarios["usuarios"][i]["documento"]== documento:
-#             if datos_usuarios["usuarios"][i]["cantidad_compras"] ==1:
-#                 datos_usuarios["usuarios"][i]["tipo_cliente"]="regular"
-#             elif datos_usuarios["usuarios"][i]["cantidad_compras"] >=3:
-#                 datos_usuarios["usuarios"][i]["tipo_cliente"]="leal"
-#             return datos_usuarios
-#         else:
-#             print("no se encontro dicho documento")
-#     return datos_usuarios
+    return datos, datos_usuarios
 
 def actualizador_tipo_cliente(datos_usuarios, documento):
     for usuario in datos_usuarios["usuarios"]:
@@ -94,8 +123,6 @@ def actualizador_tipo_cliente(datos_usuarios, documento):
     return datos_usuarios
 
 
-
-
 def mostrar_ventas(datos):
     for i in range(len(datos["ventas"])):
         print( "ID:",datos["ventas"][i]["id"], end=" ")
@@ -104,19 +131,20 @@ def mostrar_ventas(datos):
         print("Fecha Venta: ",datos["ventas"][i]["fecha"])
         print("***************************************")
 
-def caracteristicas_pro_ser(datos,datos_servicios):
+def caracteristicas_pro_ser(datos_productos, datos_servicios):
     print("Caracteristicas Productos")
-    for i in range(len(datos["productos"])):
-        print(datos["ventas"][i]["id"])
-        print(datos["ventas"][i]["nombre"])
-        print(datos["ventas"][i]["caracteristicas"])
-        print(datos["ventas"][i]["precio"])
+    for i in range(len(datos_productos["productos"])):
+        print('Id',datos_productos["productos"][i]["id"], end=": ")
+        print(datos_productos["productos"][i]["nombre"])
+        print('Caracteristicas: ',datos_productos["productos"][i]["caracteristicas"])
+        print('Precio: ',datos_productos["productos"][i]["precio"])
+    print("***************************************")
     print("Caracteristicas Servicios")
     for i in range(len(datos_servicios["servicios"])):
-        print(datos_servicios["servicios"][i]["id"])
+        print('Id',datos_servicios["servicios"][i]["id"], end=": ")
         print(datos_servicios["servicios"][i]["nombre"])
-        print(datos_servicios["servicios"][i]["caracteristicas"])
-        print(datos_servicios["servicios"][i]["precio"])
+        print('Caracteristicas: ',datos_servicios["servicios"][i]["caracteristicas"])
+        print('Precio: ',datos_servicios["servicios"][i]["precio"])
 
 def generador_id(datos):
     return len(datos["ventas"]) + 1

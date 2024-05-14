@@ -2,7 +2,12 @@ def crear_usuarios(datos):
     datos = dict(datos)
     usuario={}
     usuario["nombre"]=input("Ingrese el nombre: ")
-    usuario["documento"]=input("Ingrese el documento: ")
+    documento =""
+    while len(documento) != 10:
+        documento = input("Ingrese el documento (debe tener 10 caracteres): ")
+        if len(documento) != 10:
+            print("El documento debe tener exactamente 10 caracteres.")
+    usuario["documento"]=documento
     usuario["tipo_cliente"]="Nuevo"
     usuario["telefono"]=input("Ingrese su numero telefonico: ")
     usuario["direccion"]=input("Ingrese su direccion de residencia: ")

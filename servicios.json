@@ -2,15 +2,33 @@
     "servicios": [
         {
             "id": 1,
-            "nombre": "prepago",
-            "caracteristicas": "sddfsdf",
-            "precio": 234
+            "nombre": "internet fibra optica 300 MB",
+            "caracteristicas": "Internet dirijido para usuarios que jueguen videojuegos competitivamente",
+            "precio": 200000
         },
         {
             "id": 2,
-            "nombre": "postpago",
-            "caracteristicas": "fjsdfsd",
-            "precio": 45
+            "nombre": "internet fibra optica 80 MB",
+            "caracteristicas": "Internet dirijido para usuarios que vivan con hasta 10 personas",
+            "precio": 150000
+        },
+        {
+            "id": 3,
+            "nombre": "internet fibra optica 20 MB",
+            "caracteristicas": "Internet dirijido para usuarios con bajo presupuesto y vivan con menos de 4 personas",
+            "precio": 60000
+        },
+        {
+            "id": 4,
+            "nombre": "Plan Postpago",
+            "caracteristicas": "no c",
+            "precio": 30000
+        },
+        {
+            "id": 5,
+            "nombre": "Plan prepago",
+            "caracteristicas": "no c",
+            "precio": 30000
         }
     ]
 }
