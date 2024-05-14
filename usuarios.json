@@ -1,61 +1,52 @@
 {
     "usuarios": [
         {
-            "nombre": "Alejandro",
-            "documento": "1050602473",
-            "telefono": "3235478",
-            "direccion": "cr 3249",
-            "estudiante": true,
-            "videojuegos": true,
-            "cantidad_gente": 4,
+            "nombre": "Juan",
+            "documento": "1230402363",
+            "tipo_cliente": "Nuevo",
+            "telefono": "323245",
+            "direccion": "cr23434",
+            "estudiante": false,
+            "videojuegos": false,
+            "cantidad_gente": 1,
             "consultas": "",
             "reclamaciones": "",
             "sugerencias": "",
-            "cantidad_compras": 1,
-            "sus_servicios": [
-                "prepago",
-                "prepago"
-            ],
-            "productos": [
-                "iphone 15",
-                "iphone 15"
-            ]
+            "cantidad_compras": 0,
+            "sus_servicios": [],
+            "productos": []
         },
         {
-            "nombre": "meteo",
-            "documento": "2343",
-            "tipo_cliente": "leal",
-            "telefono": "543",
-            "direccion": "vdsra4",
-            "estudiante": true,
+            "nombre": "Esteban",
+            "documento": "2143563456",
+            "tipo_cliente": "Nuevo",
+            "telefono": "345453452",
+            "direccion": "cr 43 54 ",
+            "estudiante": false,
             "videojuegos": false,
-            "cantidad_gente": 3,
+            "cantidad_gente": 5,
             "consultas": "",
             "reclamaciones": "",
             "sugerencias": "",
-            "cantidad_compras": 8,
+            "cantidad_compras": 0,
             "sus_servicios": [],
-            "productos": [
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15",
-                "iphone 15"
-            ]
+            "productos": []
+        },
+        {
+            "nombre": "jueanes",
+            "documento": "3273490233",
+            "tipo_cliente": "Nuevo",
+            "telefono": "2379812",
+            "direccion": "cr 324",
+            "estudiante": false,
+            "videojuegos": false,
+            "cantidad_gente": 1,
+            "consultas": "",
+            "reclamaciones": "",
+            "sugerencias": "",
+            "cantidad_compras": 0,
+            "sus_servicios": [],
+            "productos": []
         }
     ]
 }

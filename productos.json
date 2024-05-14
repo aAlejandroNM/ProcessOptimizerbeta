@@ -3,19 +3,19 @@
         {
             "id": 1,
             "nombre": "iphone 15",
-            "caracteristicas":"",
+            "caracteristicas": "",
             "precio": 1150000
         },
         {
             "id": 2,
             "nombre": "iphone 16",
-            "caracteristicas":"",
+            "caracteristicas": "",
             "precio": 4150000
         },
         {
             "id": 3,
             "nombre": "Airpods",
-            "caracteristicas":"",
+            "caracteristicas": "",
             "precio": 2150000
         }
     ]

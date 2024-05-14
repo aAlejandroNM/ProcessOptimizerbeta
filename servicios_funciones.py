@@ -1,15 +1,21 @@
-
+from manejoexcepciones import *
 def crear_servicio(datos):
     datos = dict(datos)
-    servicio={}
-    servicio["id"]=generador_id(datos)
-    servicio["nombre"]=input("Ingrese el nuevo servicio: ")
-    servicio["caracteristicas"]=input("Ingrese las caracteristicas del servicio")
-    servicio["precio"]=int(input("Cuento Cuesta el servicio"))
+    servicio = {}
+    servicio["id"] = generador_id(datos)
+    servicio["nombre"] = input("Ingrese el nuevo servicio: ")
+    servicio["caracteristicas"] = input("Ingrese las características del servicio: ")
+    
+    while True:
+        try:
+            servicio["precio"] = float(input("¿Cuánto cuesta el servicio? "))
+            break
+        except ValueError:
+            print("Error: Por favor, ingrese un número válido para el precio del servicio.")
 
     datos["servicios"].append(servicio)
 
-    print("servicio agregado con éxito!")
+    print("Servicio agregado con éxito!")
     return datos
 
 def eliminar_servicios(datos):
@@ -28,7 +34,7 @@ def eliminar_servicios(datos):
                 print("Servicio eliminado!")
                 actualizador_id(datos)
                 return datos
-        print("No se encontro el servicio !!")
+    print("No se encontro el servicio !!")
     return datos
 
 def modificar_servicios(datos):
@@ -41,16 +47,17 @@ def modificar_servicios(datos):
         print(datos["servicios"][i]["nombre"])
 
 
-    id_soli =input("Ingrese el id del servicio que quiere editar: ")
+    id_soli =int(input("Ingrese el id del servicio que quiere editar: "))
     for i in range(len(datos["servicios"])):
         if datos["servicios"][i]["id"] == id_soli:
-                datos["usuarios"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
-                servicio["caracteristicas"]=input("Ingrese las caracteristicas del servicio")
-                servicio["precio"]=int(input("Cuento Cuesta el servicio"))
-                print("Servicio modificado con exito!")
+                datos["servicios"][i]["nombre"]=input("Ingrese el nuevo nombre: ")
+                datos["servicios"][i]["caracteristicas"]=input("Ingrese las caracteristicas del servicio")
+                datos["servicios"][i]["precio"]=int(input("Cuento Cuesta el servicio"))
+                print("servicios modificado con exito!")
                 return datos
-        print("No se encontro el servicio :(")
+    print("No se encontro el servicio :(")
     return datos
+
 
 def generador_id(datos):
     return len(datos["servicios"]) + 1
