@@ -38,6 +38,15 @@
             "valor_total": 782000.0,
             "documento": "2343",
             "fecha": "2024-05-13 19:45"
+        },
+        {
+            "id": 6,
+            "cliente": "juan",
+            "producto": "",
+            "servicio": "internet fibra optica 300 MB",
+            "valor_total": 200000,
+            "documento": "1230402363",
+            "fecha": "2024-05-15 14:50"
         }
     ]
 }

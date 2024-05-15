@@ -104,7 +104,8 @@ def crear_venta(datos, datos_usuarios,datos_servicios,datos_productos):
     
     venta["valor_total"]=valor_total
     venta["documento"]=documento
-    venta["fecha"]=datetime.now().strftime("%Y-%m-%d %H:%M")
+    venta["fecha"]=datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    
     datos["ventas"].append(venta)
 
 

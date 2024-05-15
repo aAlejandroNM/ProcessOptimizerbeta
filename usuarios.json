@@ -3,7 +3,7 @@
         {
             "nombre": "Juan",
             "documento": "1230402363",
-            "tipo_cliente": "Nuevo",
+            "tipo_cliente": "regular",
             "telefono": "323245",
             "direccion": "cr23434",
             "estudiante": false,
@@ -12,8 +12,10 @@
             "consultas": "",
             "reclamaciones": "",
             "sugerencias": "",
-            "cantidad_compras": 0,
-            "sus_servicios": [],
+            "cantidad_compras": 1,
+            "sus_servicios": [
+                "internet fibra optica 300 MB"
+            ],
             "productos": []
         },
         {
@@ -41,6 +43,22 @@
             "estudiante": false,
             "videojuegos": false,
             "cantidad_gente": 1,
+            "consultas": "",
+            "reclamaciones": "",
+            "sugerencias": "",
+            "cantidad_compras": 0,
+            "sus_servicios": [],
+            "productos": []
+        },
+        {
+            "nombre": "alejandro",
+            "documento": "3254768943",
+            "tipo_cliente": "Nuevo",
+            "telefono": "43425234",
+            "direccion": "cr234 ",
+            "estudiante": false,
+            "videojuegos": true,
+            "cantidad_gente": 4,
             "consultas": "",
             "reclamaciones": "",
             "sugerencias": "",
